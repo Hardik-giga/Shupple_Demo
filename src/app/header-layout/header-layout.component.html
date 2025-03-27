@@ -1,0 +1,42 @@
+<div class="flex bg-[#e9ebe8]">
+  <!-- Sidebar with fixed width (256px) -->
+  <app-sidebar class="w-64 bg-gray-100"></app-sidebar>
+
+  <!-- Main content area (fills remaining space) -->
+  <div class="flex flex-col flex-1">
+    <!-- Header (spans full width of remaining area) -->
+    <app-header class="h-16 shadow-md bg-white"></app-header>
+    <!-- toggle button header/footer -->
+    <div class="bg-white shadow-md p-4 flex items-center space-x-2 my-5 ml-5">
+      <button 
+        (click)="toggle('header')" 
+        [class.font-bold]="activeButton === 'header'"
+        [class.bg-gray-100]="activeButton !== 'header'"
+        [class.border-black]="activeButton === 'header'"
+        [class.border-transparent]="activeButton !== 'header'"
+        class="px-4 py-2 border rounded shadow-sm text-xl"
+      >
+        Header
+      </button>
+    
+      <button 
+        (click)="toggle('footer')" 
+        [class.font-bold]="activeButton === 'footer'"
+        [class.bg-gray-100]="activeButton !== 'footer'"
+        [class.border-black]="activeButton === 'footer'"
+        [class.border-transparent]="activeButton !== 'footer'"
+        class="px-4 py-2 border rounded shadow-sm text-xl"
+      >
+        Footer
+      </button>
+    </div>
+    
+    
+    <!-- Content divided into two equal columns -->
+    <div class="flex flex-1">
+      <app-header-pages class="w-1/2 mx-5 mb-5"></app-header-pages>
+      <!-- <div class="w-1/2 bg-gray-200 p-4">Left Column</div> -->
+      <div class="w-1/2 bg-gray-300 p-4">Right Column</div>
+    </div>
+  </div>
+</div>

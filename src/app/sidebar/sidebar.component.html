@@ -1,0 +1,56 @@
+<div class="w-64 bg-[#ffffff] p-4 h-screen">
+    <!-- Logo -->
+    <div class="mb-10"><img src="assets/icons/Shupple.png" alt="Shupple" class="w-45 h-8 mr-10"></div>
+    
+    <!-- Main Menu -->
+    <ul class="space-y-1">
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/dashboard.png" alt="Dashboard" class="w-5 h-5 mr-10"> Dashboard
+        </li>
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/my_order.png" alt="Orders" class="w-5 h-5 mr-10"> Orders
+        </li>
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/product.png" alt="My Products" class="w-5 h-5 mr-10"> My Products
+        </li>
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/banner.png" alt="Marketing Banner" class="w-5 h-5 mr-10"> Marketing Banner
+        </li>
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/cart.png" alt="Abandoned Cart" class="w-5 h-5 mr-10"> Abandoned Cart
+        </li>
+        <li class="text-black p-3 pl-0 flex items-center cursor-pointer border-b border-gray-300">
+            <img src="assets/icons/report.png" alt="My Reports" class="w-5 h-5 mr-10"> My Reports
+        </li>
+    </ul>
+
+    <!-- Settings Section -->
+    <div class="mt-4">
+        <div class="text-black p-2 pl-0 flex items-center cursor-pointer">
+            <img src="assets/icons/setting.png" alt="Settings" class="w-5 h-5 mr-10"> 
+            <span>Settings</span>
+        </div>
+
+        <!-- Appearance Option -->
+        <div (click)="toggleSettings()" class="p-2 mt-4 pl-0 flex items-center cursor-pointer"
+             [ngClass]="{ 'text-[#3560e6] font-bold': isSettingsExpanded, 'text-black': !isSettingsExpanded }">
+            <img src="assets/icons/setting.png" alt="Appearance" class="w-5 h-5 mr-10"> 
+            Appearance
+        </div>
+
+        <!-- Expanded Settings -->
+        <div *ngIf="isSettingsExpanded" class="pl-8 ml-5">
+            <p (click)="selectedOption = 'globalSettings'"
+               class="p-2 cursor-pointer"
+               [ngClass]="{ 'text-[#3560e6] font-bold': selectedOption === 'globalSettings', 'text-black': selectedOption !== 'globalSettings' }">
+                Global settings
+            </p>
+
+            <p (click)="selectedOption = 'menus'"
+               class="p-2 cursor-pointer"
+               [ngClass]="{ 'text-[#3560e6] font-bold': selectedOption === 'menus', 'text-black': selectedOption !== 'menus' }">
+                Menus
+            </p>
+        </div>
+    </div>    
+</div>

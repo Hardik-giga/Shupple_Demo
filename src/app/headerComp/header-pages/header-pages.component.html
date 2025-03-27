@@ -1,0 +1,28 @@
+<div class="bg-white shadow-md p-4  rounded relative">
+    <!-- Dropdown Header -->
+    <div class="flex justify-between items-center cursor-pointer" (click)="toggleDropdown()">
+      <h2 class="text-2xl mb-5">Pages</h2>  <!-- Increased font size -->
+      <span [class.rotate-180]="isOpen" class="transition-transform">▼</span>
+    </div>
+  
+    <!-- List (Show if open) -->
+    <div *ngIf="isOpen" class="mt-2 max-h-66 overflow-y-auto custom-scrollbar">
+      <label *ngFor="let page of pages; let i = index" class="flex items-center space-x-3 mb-3 text-lg"> 
+        <input 
+          class="custom-checkbox"
+          type="checkbox" 
+          [checked]="page.selected" 
+          (change)="toggleSelection(i)"
+        >
+        <span class="text-gray-900">{{ page.name }}</span>
+      </label>
+    </div>
+  
+    <!-- Add to Menu Button (Bottom Right) -->
+    <div class="flex justify-end mt-6">
+      <button class="bg-[#1e4558] text-white px-4 py-2 rounded text-lg">
+        Add to menu
+      </button>
+    </div>
+  </div>
+  

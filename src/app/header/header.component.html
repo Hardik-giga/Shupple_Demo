@@ -1,0 +1,60 @@
+<header class="h-16 bg-white flex justify-end items-center">
+  <div class="relative group">
+    <img
+      src="assets/icons/questionMark.png"
+      alt="?"
+      class="w-5 h-5 mx-3 cursor-pointer"
+    />
+    <span
+      class="absolute right-10 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      Guide Text
+    </span>
+  </div>
+  
+  
+  <span class="text-gray-900 font-bold mx-3">Help</span>
+
+  <!-- Notification Icon -->
+  <button class="mx-3">
+    <img
+      src="assets/icons/notification.png"
+      alt="Notification"
+      class="w-5 h-5"
+    />
+  </button>
+
+  <!-- Headphone Icon -->
+  <button class="mx-3">
+    <img src="assets/icons/Customer.png" alt="Customer Care" class="w-6 h-6" />
+  </button>
+
+  <!-- Profile Section -->
+  <div class="relative ml-4">
+    <button (click)="toggleDropdown()" class="flex items-center">
+      <!-- Profile Icon -->
+      <img
+        src="assets/icons/profile.png"
+        alt="Profile"
+        class="w-10 h-10 rounded-full bg-gray-300"
+      />
+      <img
+        src="assets/icons/down-arrow.png"
+        alt="Dropdown"
+        class="w-4 h-4 mx-2"
+      />
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div
+      *ngIf="dropdownOpen"
+      class="absolute right-0 mt-2 w-40 bg-white border rounded shadow-md"
+    >
+      <ul>
+        <li class="p-2 hover:bg-gray-100 cursor-pointer">Profile</li>
+        <li class="p-2 hover:bg-gray-100 cursor-pointer">Settings</li>
+        <li class="p-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+      </ul>
+    </div>
+  </div>
+</header>
